@@ -4,7 +4,7 @@ A simple and interactive web app that checks the strength of user-entered passwo
 
 ## Demo
 
-![password strength demo] (public/password-checker-demo.gif)
+![App Demo](./password-checker-demo.gif)
 
 ## Features
 - Real-time password strength feedback
@@ -33,14 +33,17 @@ A simple and interactive web app that checks the strength of user-entered passwo
 ```bash
 git clone https://github.com/KodiKat93/password-strength-checker.git
 cd password-strength-checker
+```
 
 2. Install dependencies:
 ```bash
 npm install
+```
 
 3. Start the development server:
 ```bash
 npm start
+```
 
 4. Open your browser and go to https://localhost:3000
 
