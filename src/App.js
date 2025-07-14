@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React, { useState } from "react";
 import './App.css';
 
 function App() {
+  const [password, setPassword] = useState("");
+
+  const checkStrength = (pw) => {
+    let score = 0;
+    if (pw.length >= 14) score++;
+    if (/[A-Z]/.test(pw)) score++;
+    if (/[a-z]/.test(pw)) score++;
+    if (/\d/.test(pw)) score++;
+    if (/[^A-Za-z0-9]/.test(pw)) score++;
+
+    const levels = ["Very Weak", "Weak", "Moderate", "Strong", "Very Strong"];
+    return levels[score] || "Very Weak";
+  };
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <input> enteredPassword=()</input>
-      </header>
+      <h2>Password Strength Checker 🔐</h2>
+      <input
+      type="password"
+      placeholder="Enter password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+      />
+      <p>Strength: {checkStrength(password)}</p>
     </div>
   );
 }
