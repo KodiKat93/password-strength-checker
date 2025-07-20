@@ -13,9 +13,21 @@ function App() {
     if (/[^A-Za-z0-9]/.test(pw)) score++;
 
     const levels = ["Very Weak", "Weak", "Moderate", "Strong", "Very Strong"];
-    return levels[score] || "Very Weak";
+    const tips =["Make sure your password is at least 14 characters long.",
+      "Use your favourite sentence/quote/or saying as your password.",
+      "Don’t use relatives’ names in passwords.",
+      "Avoid birthdays or obvious patterns.",
+      "Your password is great! 🎉"
+    ];
+    
+    return {
+      level: levels[score] || "Very Weak",
+      tip: tips[score] || tips[0]
+    };
   };
-  
+
+  const {level, tip} = checkStrength(password);
+
   return (
     <div className="App">
       <h2>Password Strength Checker 🔐</h2>
@@ -25,7 +37,8 @@ function App() {
       value={password}
       onChange={(e) => setPassword(e.target.value)}
       />
-      <p>Strength: {checkStrength(password)}</p>
+      <p>Strength: {level}</p>
+      <p>Helpful Tip: {tip}</p>
     </div>
   );
 }
