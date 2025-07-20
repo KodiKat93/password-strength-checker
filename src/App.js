@@ -22,11 +22,12 @@ function App() {
     
     return {
       level: levels[score] || "Very Weak",
-      tip: tips[score] || tips[0]
+      tip: tips[score] || tips[0],
+      score: score
     };
   };
 
-  const {level, tip} = checkStrength(password);
+  const {level, tip, score} = checkStrength(password);
 
   return (
     <div className="App">
@@ -38,8 +39,14 @@ function App() {
       onChange={(e) => setPassword(e.target.value)}
       />
       <p>Strength: {level}</p>
+
+      <div className="strength-meter">
+        <div className={`meter-bar strength-${score}`}></div>
+      </div>
+
       <p>Helpful Tip: {tip}</p>
     </div>
+    
   );
 }
 

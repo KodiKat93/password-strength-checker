@@ -8,3 +8,23 @@ input{
   font-size: 16px;
   width: 300px;
 }
+
+.strength-meter {
+  width: 300px;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+
+.meter-bar {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.strength-0 { width: 20%; background-color: #ff4d4d; }   /* Very Weak */
+.strength-1 { width: 40%; background-color: #ff944d; }   /* Weak */
+.strength-2 { width: 60%; background-color: #ffc107; }   /* Moderate */
+.strength-3 { width: 80%; background-color: #4caf50; }   /* Strong */
+.strength-4 { width: 100%; background-color: #00bcd4; }  /* Very Strong */
