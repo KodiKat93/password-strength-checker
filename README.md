@@ -14,6 +14,7 @@ A simple and interactive web app that checks the strength of user-entered passwo
     - Numbers and special characters
 - Dynamic strength level: Very Weak → Very Strong
 - Clean, responsive design
+- Animated password strength meter bar
 - Built with React
 
 ## Tech Stack
@@ -54,7 +55,6 @@ This app was created by **Kodi Croonen** as part of my software development and 
 - Add password generator
 - Integration with HaveIBeenPwned API
 - Dark mode toggle
-- Animated strength meter bar
 
 ## License
 This project is licensed under the MIT License.
